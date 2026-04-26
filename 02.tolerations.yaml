@@ -18,7 +18,7 @@ spec:
         now: K8s
     spec:
       nodeSelector:
-
+        kubernetes.io/hostname: ip-192-168-26-164.ec2.internal  
       containers:
       - name: nginx
         image: nginx
