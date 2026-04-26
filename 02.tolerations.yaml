@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    course: DevOps 
+    now: K8s 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      course: DevOps 
+      now: K8s
+  template:
+    metadata:
+      labels:
+        course: DevOps 
+        now: K8s
+    spec:
+      nodeSelector:
+
+      containers:
+      - name: nginx
+        image: nginx
+      tolerations:
+      - key: "project"
+        operator: "Equal"
+        value: "roboshop"
+        effect: "NoSchedule"
