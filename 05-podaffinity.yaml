@@ -22,7 +22,8 @@ spec:
       - labelSelector:
           matchLabels:
             app: pod-affinity-1
-        topologyKey: topology.kubernetes.io/zone
+        # topologyKey: topology.kubernetes.io/zone (same az)
+        topologyKey: kubernetes.io/hostname
   containers:
   - name: nginx
     image: nginx
