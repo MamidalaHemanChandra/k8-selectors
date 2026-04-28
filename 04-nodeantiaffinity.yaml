@@ -11,7 +11,7 @@ spec:
           - key: topology.kubernetes.io/zone
             operator: NotIn
             values:
-            - antarctica-east1
+            - us-east-1c
   containers:
   - name: nginx
     image: nginx
