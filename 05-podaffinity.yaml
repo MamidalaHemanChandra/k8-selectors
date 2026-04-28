@@ -20,11 +20,8 @@ spec:
     podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
-          matchExpressions:
-          - key: app
-            operator: In
-            values:
-            - pod-affinity-1
+          matchLabels:
+            app: pod-affinity-1
         topologyKey: topology.kubernetes.io/zone
   containers:
   - name: nginx
