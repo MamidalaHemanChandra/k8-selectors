@@ -11,22 +11,22 @@ spec:
           - key: topology.kubernetes.io/zone
             operator: In
             values:
-            - antarctica-east1
+            - us-east-1c
       preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         preference:
           matchExpressions:
-          - key: label-1
+          - key: env
             operator: In
             values:
-            - key-1
+            - dev
       - weight: 50
         preference:
           matchExpressions:
-          - key: label-2
+          - key: env
             operator: In
             values:
-            - key-2
+            - prod
   containers:
   - name: nginx
     image: nginx
